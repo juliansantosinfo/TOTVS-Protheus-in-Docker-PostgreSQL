@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master", "main", "1*" ]
+    branches: [ "master", "main", "v*" ]
     paths-ignore:
       - '**/.vscode/**'
       - '**/docs/**'
@@ -15,7 +15,7 @@ on:
       - '**/docker-compose*'
       - 'run.sh'
   pull_request:
-    branches: [ "master", "main", "12.1.*" ]
+    branches: [ "master", "main", "v*" ]
     paths-ignore:
       - '**/.vscode/**'
       - '**/docs/**'
