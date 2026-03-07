@@ -1,0 +1,24 @@
+**/temp/
+**/temp/
+
+# Ignora tudo dentro das pastas
+packages/**
+totvs/**
+
+# Permite versionar a estrutura (diretórios)
+!totvs/
+!totvs/resources/
+!totvs/licenseserver/
+
+# Permite appserver.ini
+!appserver.ini
+
+# Permite os arquivos sentinela
+!.gitkeep
+
+# Gemini CLI
+GEMINI.md
+.geminiignore
+
+# AmazonQ CLI
+.amazonq/rules/memory-bank/project-memory.md

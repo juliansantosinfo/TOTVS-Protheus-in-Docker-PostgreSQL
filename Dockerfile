@@ -1,0 +1,27 @@
+ARG IMAGE_BASE=postgres:15
+# hadolint ignore=DL3006
+FROM ${IMAGE_BASE}
+
+LABEL version="15"
+LABEL description="TOTVS PostgreSQL"
+LABEL maintainer="Julian de Almeida Santos <julian.santos.info@gmail.com>"
+
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=ProtheusDatabasePassword1
+ENV POSTGRES_DB=protheus
+ENV POSTGRES_INITDB_ARGS="--locale=pt_BR.ISO-8859-1 -E LATIN1"
+ENV RESTORE_BACKUP=Y
+ENV DEBUG_SCRIPT=false
+ENV TZ=America/Sao_Paulo
+
+COPY ./packages/data.tar.gz /tmp/data.tar.gz
+COPY entrypoint.sh /entrypoint.sh
+COPY healthcheck.sh /healthcheck.sh
+
+RUN chmod +x /entrypoint.sh /healthcheck.sh
+
+EXPOSE 5432
+
+ENTRYPOINT [ "/entrypoint.sh" ]
+
+CMD [ "postgres" ]
