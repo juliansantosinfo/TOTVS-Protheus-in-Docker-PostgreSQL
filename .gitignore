@@ -8,7 +8,6 @@ totvs/**
 # Permite versionar a estrutura (diretórios)
 !totvs/
 !totvs/resources/
-!totvs/licenseserver/
 
 # Permite appserver.ini
 !appserver.ini

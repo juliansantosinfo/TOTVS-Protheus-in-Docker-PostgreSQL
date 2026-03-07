@@ -2,7 +2,7 @@
 #
 # ==============================================================================
 # SCRIPT: clean.sh
-# DESCRIÇÃO: Limpa arquivos não versionados dos diretórios dbaccess e packages
+# DESCRIÇÃO: Limpa arquivos não versionados dos projeto
 # AUTOR: Julian de Almeida Santos
 # DATA: 2025-01-15
 # USO: ./clean.sh
