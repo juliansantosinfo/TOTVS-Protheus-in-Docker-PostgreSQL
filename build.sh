@@ -222,8 +222,6 @@ EOF
 
         for file in "${POSTGRES_BACKUP_FILES[@]}"; do
             if [ ! -f "$file" ]; then
-                # Cria um arquivo tar vazio se não existir para evitar erro no COPY do Dockerfile
-                tar -czf "$file" -T /dev/null
                 # Pula validação de recursos se estiver usando imagem base customizada
                 if [[ "$USING_CUSTOM_BASE" == "true" ]]; then
                     print_info "Usando imagem base customizada - pulando validação de recursos locais"

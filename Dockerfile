@@ -14,7 +14,7 @@ ENV RESTORE_BACKUP=Y
 ENV DEBUG_SCRIPT=false
 ENV TZ=America/Sao_Paulo
 
-COPY ./packages/data.tar.gz /tmp/data.tar.gz
+COPY ./packages/* /tmp/
 COPY entrypoint.sh /entrypoint.sh
 COPY healthcheck.sh /healthcheck.sh
 
